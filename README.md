@@ -4,4 +4,4 @@ PoC for displaying a Tree table using Angular 4 and ng-boostrap
 
 ## Demo
 
-See ./demo/collapse.gif
+See https://github.com/martibenj/ng4-tree-table/blob/master/demo/collapse.gif
