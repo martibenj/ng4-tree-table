@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">Action</div>
+        <div class="col-sm-4">Identifiant</div>
+        <div class="col-sm-4">Information</div>
+    </div>
+</div>
+<div *ngFor="let aData of datas; index as $i;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <button (click)="clicLine($i)" [attr.aria-expanded]="!isExpanded[$i]" aria-controls="line$i" type="button" class="btn btn-outline-primary">
+                    <span *ngIf="!isExpanded[$i]">[+]</span>
+                    <span *ngIf="isExpanded[$i]">[-]</span>
+                </button>
+            </div>
+            <div class="col-sm-4">{{ aData.id }}</div>
+            <div class="col-sm-4">{{ aData.info }}</div>
+        </div>
+        <div *ngFor="let aDetail of aData.details; index as $j;" id="line$i" [ngbCollapse]="!isExpanded[$i]">
+            <div class="row">
+                <div class="col-sm-4">&nbsp;</div>
+                <div class="col-sm-4">{{ aDetail.id }}</div>
+                <div class="col-sm-4">{{ aDetail.info }}</div>
+            </div>
+        </div>
+    </div>
+</div>
